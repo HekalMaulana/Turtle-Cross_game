@@ -12,6 +12,7 @@ class Player(Turtle):
         self.color("black")
         self.penup()
         self.start_position()
+        self.increase_speed = False
 
     def start_position(self):
         self.goto(STARTING_POSITION)
@@ -21,3 +22,9 @@ class Player(Turtle):
         y = self.ycor() + MOVE_DISTANCE
         x = self.xcor()
         self.goto(x, y)
+
+    def finis_line(self):
+        if self.ycor() > 280:
+            return True
+        else:
+            return False
